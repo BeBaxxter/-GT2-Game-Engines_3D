@@ -75,6 +75,14 @@ namespace StarterAssets
         [Tooltip("For locking the camera position on all axis")]
         public bool LockCameraPosition = false;
 
+        [Header("Attack")]
+        [Tooltip("Cooldown time of attack")]
+        public float attackCooldowntime = 2f;
+        private float nextAttackTime = 0f;
+        public static int noOfClicks = 0;
+        private float lastClickedTime = 0f;
+        private float maxComboDelay = 1f;
+
         // cinemachine
         private float _cinemachineTargetYaw;
         private float _cinemachineTargetPitch;
@@ -105,6 +113,8 @@ namespace StarterAssets
         private CharacterController _controller;
         private StarterAssetsInputs _input;
         private GameObject _mainCamera;
+        public StarterAssetsActionInputs playerInput;
+        private InputAction attack;
 
         private const float _threshold = 0.01f;
 
@@ -130,6 +140,8 @@ namespace StarterAssets
             {
                 _mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
             }
+
+            playerInput = new StarterAssetsActionInputs();
         }
 
         private void Start()
@@ -152,13 +164,49 @@ namespace StarterAssets
             _fallTimeoutDelta = FallTimeout;
         }
 
+        private void OnEnable()
+        {
+            attack = playerInput.Player.Attack;
+            attack.Enable();
+        }
+
+        private void OnDisable()
+        {
+            attack.Disable();
+        }
+
         private void Update()
         {
             _hasAnimator = TryGetComponent(out _animator);
 
             JumpAndGravity();
+            //Attack();
             GroundedCheck();
             Move();
+
+            if (_animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f && _animator.GetCurrentAnimatorStateInfo(0).IsName("Attack1"))
+            {
+                _animator.SetBool("Attack1", false);
+                noOfClicks = 0;
+                //_input.attack = false;
+            }
+
+            if (Time.deltaTime - lastClickedTime > maxComboDelay)
+            {
+                noOfClicks = 0;
+                //_input.attack = false;
+            }
+
+            if (Time.deltaTime > nextAttackTime)
+            {
+                attack.performed += Attack;
+            }
+
+            if(noOfClicks == 0)
+            {
+                _input.attack = false;
+            }
+
         }
 
         private void LateUpdate()
@@ -346,6 +394,21 @@ namespace StarterAssets
             {
                 _verticalVelocity += Gravity * Time.deltaTime;
             }
+        }
+
+        private void Attack(InputAction.CallbackContext context)
+        {
+            //if (_input.attack)
+            //{
+                lastClickedTime = Time.deltaTime;
+                noOfClicks++;
+                if (noOfClicks == 1)
+                {
+                    _animator.SetBool("Attack1", true);
+                }
+                noOfClicks = Mathf.Clamp(noOfClicks, 0, 3);
+            //}
+
         }
 
         private static float ClampAngle(float lfAngle, float lfMin, float lfMax)
