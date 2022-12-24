@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
 using UnityEngine.InputSystem;
 #endif
@@ -76,12 +77,9 @@ namespace StarterAssets
         public bool LockCameraPosition = false;
 
         [Header("Attack")]
-        [Tooltip("Cooldown time of attack")]
-        public float attackCooldowntime = 2f;
-        private float nextAttackTime = 0f;
-        public static int noOfClicks = 0;
-        private float lastClickedTime = 0f;
-        private float maxComboDelay = 1f;
+        [Tooltip("Max delay time for attack")]
+        public int comboHit;
+        public float maxComboDelay = 1f;
 
         // cinemachine
         private float _cinemachineTargetYaw;
@@ -119,6 +117,9 @@ namespace StarterAssets
         private const float _threshold = 0.01f;
 
         private bool _hasAnimator;
+
+        private PossibleStates currentState;
+        
 
         private bool IsCurrentDeviceMouse
         {
@@ -180,33 +181,13 @@ namespace StarterAssets
             _hasAnimator = TryGetComponent(out _animator);
 
             JumpAndGravity();
-            //Attack();
             GroundedCheck();
             Move();
-
-            if (_animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f && _animator.GetCurrentAnimatorStateInfo(0).IsName("Attack1"))
+            if (attack.WasPressedThisFrame() )
             {
-                _animator.SetBool("Attack1", false);
-                noOfClicks = 0;
-                //_input.attack = false;
+                StartCoroutine(PrimaryAttack());
             }
-
-            if (Time.deltaTime - lastClickedTime > maxComboDelay)
-            {
-                noOfClicks = 0;
-                //_input.attack = false;
-            }
-
-            if (Time.deltaTime > nextAttackTime)
-            {
-                attack.performed += Attack;
-            }
-
-            if(noOfClicks == 0)
-            {
-                _input.attack = false;
-            }
-
+            
         }
 
         private void LateUpdate()
@@ -396,18 +377,43 @@ namespace StarterAssets
             }
         }
 
-        private void Attack(InputAction.CallbackContext context)
+        public IEnumerator PrimaryAttack()
         {
-            //if (_input.attack)
-            //{
-                lastClickedTime = Time.deltaTime;
-                noOfClicks++;
-                if (noOfClicks == 1)
-                {
-                    _animator.SetBool("Attack1", true);
-                }
-                noOfClicks = Mathf.Clamp(noOfClicks, 0, 3);
-            //}
+            
+            if (currentState != PossibleStates.Attack1 && currentState != PossibleStates.Attack2 && currentState != PossibleStates.Attack3)
+            {
+                comboHit++;
+            }
+            else if (currentState == PossibleStates.Attack1 && comboHit >= 1)
+            {
+                comboHit = 2;
+            }
+            else if ((currentState == PossibleStates.Attack1 || currentState == PossibleStates.Attack2) && comboHit >= 2)
+            {
+                comboHit = 3;
+            }
+
+            string trigger = (comboHit) switch
+            {
+                1 => PossibleStates.Attack1.ToString(),
+                2 => PossibleStates.Attack2.ToString(),
+                3 => PossibleStates.Attack3.ToString(),
+                _ => ""
+            };
+
+            if (comboHit >= 3)
+            {
+                comboHit = 0;
+            }
+
+            if (!string.IsNullOrEmpty(trigger))
+            {
+                _animator.SetTrigger(trigger);
+            }
+            
+            yield return new WaitForSeconds(maxComboDelay);
+            comboHit = 0;
+
 
         }
 

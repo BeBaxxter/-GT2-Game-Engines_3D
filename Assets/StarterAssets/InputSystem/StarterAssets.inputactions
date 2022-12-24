@@ -47,7 +47,7 @@
                     "id": "896d87a7-9a1f-4445-b049-a57a32a51721",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "",
+                    "interactions": "Press",
                     "initialStateCheck": false
                 }
             ],
@@ -220,7 +220,7 @@
                 {
                     "name": "",
                     "id": "c8fcd86e-dcfd-4f88-8e93-b638cdbf3320",
-                    "path": "<Gamepad>/leftStickPress",
+                    "path": "<Gamepad>/leftTrigger",
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
@@ -232,7 +232,7 @@
                     "name": "",
                     "id": "41889d20-fa89-4f98-b1c6-5bece95cba1c",
                     "path": "<Mouse>/leftButton",
-                    "interactions": "",
+                    "interactions": "Press",
                     "processors": "",
                     "groups": "KeyboardMouse",
                     "action": "Attack",
@@ -243,7 +243,7 @@
                     "name": "",
                     "id": "f8aa7842-db10-44bc-96f3-b35cd2dd26a5",
                     "path": "<Gamepad>/buttonWest",
-                    "interactions": "",
+                    "interactions": "Press",
                     "processors": "",
                     "groups": "Gamepad",
                     "action": "Attack",
