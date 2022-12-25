@@ -1,15 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor;
 
-using UnityEngine.Events;
-using UnityEngine.UI;
+public class Enemy : MonoBehaviour
 
-public class Player : MonoBehaviour
 {
-
-    public int maxHealth = 100;
+    public int maxHealth;
     public int currentHealth;
 
     public HealthBar healthBar;
@@ -19,11 +15,12 @@ public class Player : MonoBehaviour
     {
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
+        
     }
-    
+
     public void OnCollisionEnter(Collision collision)
     {
-        if (collision.transform.CompareTag("Enemy"))
+        if (collision.transform.CompareTag("Player") && Input.GetKeyDown(KeyCode.Space))
         {
             TakeDamage(20);
         }
