@@ -77,9 +77,10 @@ namespace StarterAssets
         public bool LockCameraPosition = false;
 
         [Header("Attack")]
-        [Tooltip("Max delay time for attack")]
         public int comboHit;
         public float maxComboDelay = 1f;
+        [SerializeField] GameObject sword;
+        [SerializeField] Transform leftHand;
 
         // cinemachine
         private float _cinemachineTargetYaw;
@@ -163,6 +164,8 @@ namespace StarterAssets
             // reset our timeouts on start
             _jumpTimeoutDelta = JumpTimeout;
             _fallTimeoutDelta = FallTimeout;
+
+            sword.transform.SetParent(leftHand);
         }
 
         private void OnEnable()
@@ -401,7 +404,7 @@ namespace StarterAssets
                 _ => ""
             };
 
-            if (comboHit >= 3)
+            if (comboHit > 3)
             {
                 comboHit = 0;
             }
@@ -411,7 +414,7 @@ namespace StarterAssets
                 _animator.SetTrigger(trigger);
             }
             
-            yield return new WaitForSeconds(maxComboDelay);
+            yield return new WaitForSeconds(_animator.GetCurrentAnimatorStateInfo(0).length);
             comboHit = 0;
 
 
