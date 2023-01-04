@@ -94,12 +94,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1566654969148033285}
   m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86a64d654484bf4499a24f2329e6b763, type: 3}
+  m_Script: {fileID: 11500000, guid: fce8423574279894aa0e995d7b0f3751, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sword: {fileID: 1566654969148033285}
-  rightHand: {fileID: 0}
-  leftHand: {fileID: 0}
+  swordDamage: 1
 --- !u!65 &5541584828823447109
 BoxCollider:
   m_ObjectHideFlags: 0

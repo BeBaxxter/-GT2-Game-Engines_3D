@@ -77,9 +77,10 @@ namespace StarterAssets
         public bool LockCameraPosition = false;
 
         [Header("Attack")]
-        public int comboHit;
-        public float maxComboDelay = 1f;
+        private int comboHit;
+        private float maxComboDelay = 1f;
         [SerializeField] GameObject sword;
+        [SerializeField] GameObject swordBack;
         [SerializeField] Transform leftHand;
 
         // cinemachine
@@ -144,6 +145,7 @@ namespace StarterAssets
             }
 
             playerInput = new StarterAssetsActionInputs();
+
         }
 
         private void Start()
@@ -190,7 +192,7 @@ namespace StarterAssets
             {
                 StartCoroutine(PrimaryAttack());
             }
-            
+           
         }
 
         private void LateUpdate()
@@ -253,6 +255,7 @@ namespace StarterAssets
             // note: Vector2's == operator uses approximation so is not floating point error prone, and is cheaper than magnitude
             // if there is no input, set the target speed to 0
             if (_input.move == Vector2.zero) targetSpeed = 0.0f;
+            
 
             // a reference to the players current horizontal velocity
             float currentHorizontalSpeed = new Vector3(_controller.velocity.x, 0.0f, _controller.velocity.z).magnitude;
@@ -287,6 +290,7 @@ namespace StarterAssets
             // if there is a move input rotate player when the player is moving
             if (_input.move != Vector2.zero)
             {
+
                 _targetRotation = Mathf.Atan2(inputDirection.x, inputDirection.z) * Mathf.Rad2Deg +
                                   _mainCamera.transform.eulerAngles.y;
                 float rotation = Mathf.SmoothDampAngle(transform.eulerAngles.y, _targetRotation, ref _rotationVelocity,
@@ -315,6 +319,7 @@ namespace StarterAssets
         {
             if (Grounded)
             {
+                
                 // reset the fall timeout timer
                 _fallTimeoutDelta = FallTimeout;
 
@@ -334,6 +339,7 @@ namespace StarterAssets
                 // Jump
                 if (_input.jump && _jumpTimeoutDelta <= 0.0f)
                 {
+
                     // the square root of H * -2 * G = how much velocity needed to reach desired height
                     _verticalVelocity = Mathf.Sqrt(JumpHeight * -2f * Gravity);
 
@@ -352,6 +358,7 @@ namespace StarterAssets
             }
             else
             {
+
                 // reset the jump timeout timer
                 _jumpTimeoutDelta = JumpTimeout;
 
@@ -414,9 +421,9 @@ namespace StarterAssets
                 _animator.SetTrigger(trigger);
             }
             
+           
             yield return new WaitForSeconds(_animator.GetCurrentAnimatorStateInfo(0).length);
             comboHit = 0;
-
 
         }
 
