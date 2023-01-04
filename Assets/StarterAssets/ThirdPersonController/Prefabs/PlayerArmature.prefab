@@ -2799,6 +2799,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GTemplarSwordFBX (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1566654969148033285, guid: d8f8df54afc3cad4eb84d1ea01257258, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2231024302086099903, guid: d8f8df54afc3cad4eb84d1ea01257258, type: 3}
       propertyPath: m_RootOrder
       value: 1
