@@ -7,11 +7,17 @@ public class SwordHitbox : MonoBehaviour
     [SerializeField] int swordDamage = 1;
     private GameObject enemy;
 
+    private void Start()
+    {
+        enemy = GameObject.FindGameObjectWithTag("Enemy");
+    }
+
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject == GameObject.FindGameObjectWithTag("Enemy"))
+        if(other.gameObject == enemy)
         {
             Debug.Log("Sword hit an enemy");
+
         }
     }
 

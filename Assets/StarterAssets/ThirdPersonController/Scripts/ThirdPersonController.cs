@@ -410,12 +410,12 @@ namespace StarterAssets
                 3 => PossibleStates.Attack3.ToString(),
                 _ => ""
             };
-
+            /*
             if (comboHit > 3)
             {
                 comboHit = 0;
             }
-
+            */
             if (!string.IsNullOrEmpty(trigger))
             {
                 _animator.SetTrigger(trigger);
@@ -423,6 +423,11 @@ namespace StarterAssets
             
            
             yield return new WaitForSeconds(_animator.GetCurrentAnimatorStateInfo(0).length);
+            
+            if (comboHit > 3)
+            {
+                comboHit = 0;
+            }
             comboHit = 0;
 
         }
