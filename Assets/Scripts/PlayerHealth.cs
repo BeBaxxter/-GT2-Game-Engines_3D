@@ -6,11 +6,12 @@ using UnityEditor;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
-public class Player : MonoBehaviour
+public class PlayerHealth : MonoBehaviour
 {
 
     public int maxHealth = 100;
     public int currentHealth;
+    private GameObject enemy;
 
     public HealthBar healthBar;
 
@@ -19,13 +20,14 @@ public class Player : MonoBehaviour
     {
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
+        enemy = GameObject.FindGameObjectWithTag("Enemy");
     }
     
-    public void OnCollisionEnter(Collision collision)
+    public void OnTriggerEnter(Collider collision)
     {
-        if (collision.transform.CompareTag("Enemy"))
+        if (collision.gameObject == enemy)
         {
-            TakeDamage(20);
+            TakeDamage(10);
         }
     }
 

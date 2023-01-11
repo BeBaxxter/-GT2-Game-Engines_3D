@@ -79,9 +79,6 @@ namespace StarterAssets
         [Header("Attack")]
         private int comboHit;
         private float maxComboDelay = 1f;
-        [SerializeField] GameObject sword;
-        [SerializeField] GameObject swordBack;
-        [SerializeField] Transform leftHand;
 
         // cinemachine
         private float _cinemachineTargetYaw;
@@ -166,8 +163,6 @@ namespace StarterAssets
             // reset our timeouts on start
             _jumpTimeoutDelta = JumpTimeout;
             _fallTimeoutDelta = FallTimeout;
-
-            sword.transform.SetParent(leftHand);
         }
 
         private void OnEnable()
