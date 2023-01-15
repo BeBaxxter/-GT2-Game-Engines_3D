@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SwordHitbox : MonoBehaviour
 {
-    [SerializeField] int swordDamage = 1;
+    public int swordDamage = 1;
     private GameObject enemy;
 
     private void Start()
@@ -16,7 +16,7 @@ public class SwordHitbox : MonoBehaviour
     {
         if(other.gameObject == enemy)
         {
-            Debug.Log("Sword hit an enemy");
+            //Debug.Log("Sword hit an enemy");
 
         }
     }
