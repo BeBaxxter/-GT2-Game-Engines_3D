@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 2231024302086099903}
   - component: {fileID: 2979671413231983642}
   - component: {fileID: 1062035963364305104}
-  - component: {fileID: 834413509}
   - component: {fileID: 5541584828823447109}
+  - component: {fileID: 3489332452906602339}
   m_Layer: 0
   m_Name: GTemplarSwordFBX
   m_TagString: Weapon
@@ -85,19 +85,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &834413509
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1566654969148033285}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fce8423574279894aa0e995d7b0f3751, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  swordDamage: 1
 --- !u!65 &5541584828823447109
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -107,7 +94,20 @@ BoxCollider:
   m_GameObject: {fileID: 1566654969148033285}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.718357, y: 0.08834165, z: 2.5536814}
   m_Center: {x: -0.0000006254262, y: 0.000004317402, z: 1.2955204}
+--- !u!114 &3489332452906602339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1566654969148033285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fce8423574279894aa0e995d7b0f3751, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  swordDamage: 1
