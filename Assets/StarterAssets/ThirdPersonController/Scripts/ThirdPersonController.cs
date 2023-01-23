@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
 using UnityEngine.InputSystem;
 #endif
@@ -75,6 +76,10 @@ namespace StarterAssets
         [Tooltip("For locking the camera position on all axis")]
         public bool LockCameraPosition = false;
 
+        [Header("Attack")]
+        private int comboHit;
+        private float maxComboDelay = 1f;
+
         // cinemachine
         private float _cinemachineTargetYaw;
         private float _cinemachineTargetPitch;
@@ -105,10 +110,15 @@ namespace StarterAssets
         private CharacterController _controller;
         private StarterAssetsInputs _input;
         private GameObject _mainCamera;
+        public StarterAssetsActionInputs playerInput;
+        private InputAction attack;
 
         private const float _threshold = 0.01f;
 
         private bool _hasAnimator;
+
+        private PossibleStates currentState;
+        
 
         private bool IsCurrentDeviceMouse
         {
@@ -130,6 +140,9 @@ namespace StarterAssets
             {
                 _mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
             }
+
+            playerInput = new StarterAssetsActionInputs();
+
         }
 
         private void Start()
@@ -152,6 +165,17 @@ namespace StarterAssets
             _fallTimeoutDelta = FallTimeout;
         }
 
+        private void OnEnable()
+        {
+            attack = playerInput.Player.Attack;
+            attack.Enable();
+        }
+
+        private void OnDisable()
+        {
+            attack.Disable();
+        }
+
         private void Update()
         {
             _hasAnimator = TryGetComponent(out _animator);
@@ -159,6 +183,11 @@ namespace StarterAssets
             JumpAndGravity();
             GroundedCheck();
             Move();
+            if (attack.WasPressedThisFrame() )
+            {
+                StartCoroutine(PrimaryAttack());
+            }
+           
         }
 
         private void LateUpdate()
@@ -221,6 +250,7 @@ namespace StarterAssets
             // note: Vector2's == operator uses approximation so is not floating point error prone, and is cheaper than magnitude
             // if there is no input, set the target speed to 0
             if (_input.move == Vector2.zero) targetSpeed = 0.0f;
+            
 
             // a reference to the players current horizontal velocity
             float currentHorizontalSpeed = new Vector3(_controller.velocity.x, 0.0f, _controller.velocity.z).magnitude;
@@ -255,6 +285,7 @@ namespace StarterAssets
             // if there is a move input rotate player when the player is moving
             if (_input.move != Vector2.zero)
             {
+
                 _targetRotation = Mathf.Atan2(inputDirection.x, inputDirection.z) * Mathf.Rad2Deg +
                                   _mainCamera.transform.eulerAngles.y;
                 float rotation = Mathf.SmoothDampAngle(transform.eulerAngles.y, _targetRotation, ref _rotationVelocity,
@@ -283,6 +314,7 @@ namespace StarterAssets
         {
             if (Grounded)
             {
+                
                 // reset the fall timeout timer
                 _fallTimeoutDelta = FallTimeout;
 
@@ -302,6 +334,7 @@ namespace StarterAssets
                 // Jump
                 if (_input.jump && _jumpTimeoutDelta <= 0.0f)
                 {
+
                     // the square root of H * -2 * G = how much velocity needed to reach desired height
                     _verticalVelocity = Mathf.Sqrt(JumpHeight * -2f * Gravity);
 
@@ -320,6 +353,7 @@ namespace StarterAssets
             }
             else
             {
+
                 // reset the jump timeout timer
                 _jumpTimeoutDelta = JumpTimeout;
 
@@ -346,6 +380,51 @@ namespace StarterAssets
             {
                 _verticalVelocity += Gravity * Time.deltaTime;
             }
+        }
+
+        public IEnumerator PrimaryAttack()
+        {
+            
+            if (currentState != PossibleStates.Attack1 && currentState != PossibleStates.Attack2 && currentState != PossibleStates.Attack3)
+            {
+                comboHit++;
+            }
+            else if (currentState == PossibleStates.Attack1 && comboHit >= 1)
+            {
+                comboHit = 2;
+            }
+            else if ((currentState == PossibleStates.Attack1 || currentState == PossibleStates.Attack2) && comboHit >= 2)
+            {
+                comboHit = 3;
+            }
+
+            string trigger = (comboHit) switch
+            {
+                1 => PossibleStates.Attack1.ToString(),
+                2 => PossibleStates.Attack2.ToString(),
+                3 => PossibleStates.Attack3.ToString(),
+                _ => ""
+            };
+            /*
+            if (comboHit > 3)
+            {
+                comboHit = 0;
+            }
+            */
+            if (!string.IsNullOrEmpty(trigger))
+            {
+                _animator.SetTrigger(trigger);
+            }
+            
+           
+            yield return new WaitForSeconds(_animator.GetCurrentAnimatorStateInfo(0).length);
+            
+            if (comboHit > 3)
+            {
+                comboHit = 0;
+            }
+            comboHit = 0;
+
         }
 
         private static float ClampAngle(float lfAngle, float lfMin, float lfMax)
