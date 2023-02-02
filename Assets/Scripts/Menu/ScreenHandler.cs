@@ -19,7 +19,6 @@ public class ScreenHandler : StateHandler
 
         if (stateMachine.CurrentState == stateMachine.MainMenuHandler)
         {
-            Debug.Log("current state main menu");
             Time.timeScale = 0;
             player.GetComponent<StarterAssetsInputs>().cursorLocked = false;
             Cursor.lockState = CursorLockMode.None;
@@ -27,7 +26,6 @@ public class ScreenHandler : StateHandler
         }
         else if (stateMachine.CurrentState == stateMachine.StartGameHandler)
         {
-            Debug.Log("current state play game");
             Time.timeScale = 1;
             player.GetComponent<StarterAssetsInputs>().cursorLocked = true;
             Cursor.lockState = CursorLockMode.Locked;
