@@ -27,12 +27,12 @@ public class runState : StateMachineBehaviour
         _agent.SetDestination(player.position);
         float distance = Vector3.Distance(player.position, animator.transform.position);
         
-        if (10 < distance)
+        if (18 < distance)
         {
             animator.SetBool("isRunning", false);
         }
 
-        if (distance < 1.5f)
+        if (distance < 1f)
         {
             animator.SetBool("isAttacking", true);
         }

@@ -1,3 +1,4 @@
+using StarterAssets;
 using UnityEngine;
 
 public class ScreenHandler : StateHandler
@@ -18,12 +19,12 @@ public class ScreenHandler : StateHandler
         canvasGroup.alpha = 0;
         canvasGroup.interactable = false;
         canvasGroup.blocksRaycasts = false;
+        
     }   
 
-    private void Awake() {
-        
-        OnExit(MenuTransitions.MainMenuSelected);
-                
+    private void Awake()
+    {
+        OnEnter(MenuTransitions.MainMenuSelected);
     } 
 
     public void PlayerDeath() {

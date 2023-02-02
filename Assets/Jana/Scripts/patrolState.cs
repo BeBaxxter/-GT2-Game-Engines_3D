@@ -1,7 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using Random = UnityEngine.Random;
 
 public class patrolState : StateMachineBehaviour
 {
@@ -11,6 +13,7 @@ public class patrolState : StateMachineBehaviour
     private float chaseRange = 8;
     private List<Transform> wayPoints = new List<Transform>();
     private SoundEffectsManager _soundEffectsManager;
+    private int patrolTimer;
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -22,7 +25,10 @@ public class patrolState : StateMachineBehaviour
         _agent = animator.GetComponent<NavMeshAgent>();
         _agent.speed = 1f;
         timer = 0;
+        patrolTimer = Random.Range(3, 7);
+       
         GameObject gameObject = GameObject.FindGameObjectWithTag("WayPoints");
+
         foreach (Transform t in gameObject.transform)
         {
             wayPoints.Add(t);
@@ -38,9 +44,8 @@ public class patrolState : StateMachineBehaviour
             _agent.SetDestination(wayPoints[Random.Range(0, wayPoints.Count)].position);
         }
         
-        
         timer += Time.deltaTime;
-        if (7 < timer)
+        if (patrolTimer < timer)
         {
             animator.SetBool("isPatrolling", false);
         }
