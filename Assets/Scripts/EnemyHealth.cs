@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,12 +11,16 @@ public class EnemyHealth : MonoBehaviour
     private GameObject playerWeapon;
     public SwordHitbox sword;
     private int damage;
+    private SoundEffectsManager _soundEffectsManager;
+    private Animator _animator;
 
     //public HealthBar healthBar;
 
     // Start is called before the first frame update
     void Start()
     {
+        _animator = GetComponent<Animator>();
+        _soundEffectsManager = FindObjectOfType<SoundEffectsManager>();
         currentHealth = maxHealth;
         playerWeapon = GameObject.FindGameObjectWithTag("Weapon");
         damage = sword.swordDamage;
@@ -27,8 +32,8 @@ public class EnemyHealth : MonoBehaviour
     {
         if (collision.gameObject == playerWeapon)
         {
+            _soundEffectsManager.playSoundEffect(3);
             TakeDamage(damage);
-            Debug.Log("Sword hit an enemy");
         }
     }
 
@@ -38,7 +43,8 @@ public class EnemyHealth : MonoBehaviour
 
         if (currentHealth <= 0)
         {
-            Destroy(this.gameObject);
+            _animator.SetBool("isDead", true);
+            _soundEffectsManager.playSoundEffect(0);
         }
         //healthBar.SetHealth(currentHealth);
     }

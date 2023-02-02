@@ -5,18 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="93a784ba-db78-4f8b-8341-e519b0ba32d5" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/StarterAssets/Environment/Art/Materials/Blue_Mat.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StarterAssets/Environment/Art/Materials/Blue_Mat.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StarterAssets/Environment/Art/Materials/GreyBlue_Mat.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StarterAssets/Environment/Art/Materials/GreyBlue_Mat.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StarterAssets/Environment/Art/Materials/GridBlue_01_Mat.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StarterAssets/Environment/Art/Materials/GridBlue_01_Mat.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StarterAssets/ThirdPersonController/Character/Materials/M_Armature_Arms.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StarterAssets/ThirdPersonController/Character/Materials/M_Armature_Arms.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StarterAssets/ThirdPersonController/Character/Materials/M_Armature_Body.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StarterAssets/ThirdPersonController/Character/Materials/M_Armature_Body.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StarterAssets/ThirdPersonController/Character/Materials/M_Armature_Legs.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StarterAssets/ThirdPersonController/Character/Materials/M_Armature_Legs.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StarterAssets/ThirdPersonController/Scenes/Playground.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StarterAssets/ThirdPersonController/Scenes/Playground.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.testtools.codecoverage/Settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.testtools.codecoverage/Settings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.-GT2-Game-Engines_3D/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.-GT2-Game-Engines_3D/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Billy Work/Assets/Animations/slash1.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Billy Work/Assets/Animations/slash1.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Billy Work/Assets/Animations/slash2.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Billy Work/Assets/Animations/slash2.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Billy Work/Assets/Animations/slash3.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Billy Work/Assets/Animations/slash3.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Jana/Scripts/attackTwoState.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Jana/Scripts/attackTwoState.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Jana/Scripts/patrolState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Jana/Scripts/patrolState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Jana/Scripts/runState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Jana/Scripts/runState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Jana/enemy/EnemyAnimationController.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Jana/enemy/EnemyAnimationController.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefab/Monster.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/Monster.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/HealthBar.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/HealthBar.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Jana.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Jana.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/LevelDesign.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/LevelDesign.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EnemyHealth.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EnemyHealth.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Menu/ScreenHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Menu/ScreenHandler.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/URPProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/URPProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,6 +80,7 @@
       <updated>1672584372062</updated>
       <workItem from="1672584379467" duration="9391000" />
       <workItem from="1673724442765" duration="30334000" />
+      <workItem from="1675355632534" duration="16682000" />
     </task>
     <servers />
   </component>
