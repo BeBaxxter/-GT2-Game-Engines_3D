@@ -57,14 +57,6 @@ public class ScreenHandler : StateHandler
         
     }
 
-    /*public void PlayerDeath()
-    {
-        stateMachine.Trigger(MenuTransitions.PlayerDead);
->>>>>>> Stashed changes
-        OnEnter(MenuTransitions.PlayerDead);
-        
-    }*/
-
     public void PlayerWin()
     {
         stateMachine.Trigger(MenuTransitions.PlayerWin);
