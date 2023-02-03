@@ -40,3 +40,4 @@ https://assetstore.unity.com/packages/3d/environments/sci-fi/sci-fi-construction
 Sickhead Games
 https://assetstore.unity.com/packages/3d/props/4-industrial-barrels-76538 - 4 Industrial barrels -Vertex Field
 https://assetstore.unity.com/packages/2d/textures-materials/sky/galaxybox-1-0-18289 - GalaxyBox 1.0 -LemonSpawn
+https://www.cgtrader.com/free-3d-models/military/melee/high-templar-fantasy-greatsword - High Templar fantasy Greatsword by joan lahoz
