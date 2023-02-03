@@ -5,19 +5,19 @@ public class ScreenHandler : StateHandler
 {
     [SerializeField] private string handlerName;
     [SerializeField] private CanvasGroup canvasGroup;
+    private GameObject deathScreen;
+    
     public override string Name => handlerName;
-
     private GameObject player;
-
     public MenuStateMachine stateMachine;
-
+    
     public override void OnEnter<T>(T transition)
     {
         canvasGroup.alpha = 1;
         canvasGroup.interactable = true;
         canvasGroup.blocksRaycasts = true;
 
-        if (stateMachine.CurrentState == stateMachine.MainMenuHandler)
+        if (stateMachine.CurrentState == stateMachine.PlayerDeadHandler || stateMachine.CurrentState == stateMachine.PlayerWinHandler || stateMachine.CurrentState == stateMachine.MainMenuHandler)
         {
             Time.timeScale = 0;
             player.GetComponent<StarterAssetsInputs>().cursorLocked = false;
@@ -31,7 +31,6 @@ public class ScreenHandler : StateHandler
             Cursor.lockState = CursorLockMode.Locked;
             player.GetComponent<StarterAssetsInputs>().cursorInputForLook = true;
         }
-
     }
 
     public override void OnExit<T>(T transition)
@@ -48,8 +47,18 @@ public class ScreenHandler : StateHandler
         OnEnter(MenuTransitions.MainMenuSelected);
     }
 
-    public void PlayerDeath()
+    public void PlayerDeath() {
+        player = GameObject.FindGameObjectWithTag("Player");
+        deathScreen = GameObject.FindGameObjectWithTag("DeathScreen");
+        OnEnter(MenuTransitions.MainMenuSelected);
+        OnExit(MenuTransitions.PlayerDead);
+        OnExit(MenuTransitions.PlayerWin);
+    }
+
+    public void PlayerWin()
     {
-        OnEnter(MenuTransitions.PlayerDead);
+        stateMachine.Trigger(MenuTransitions.PlayerWin);
+        OnEnter(MenuTransitions.PlayerWin);
+        deathScreen.SetActive(false);
     }
 }

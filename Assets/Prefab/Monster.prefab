@@ -1235,7 +1235,6 @@ GameObject:
   - component: {fileID: 4864310122719725943}
   - component: {fileID: 4864310122719725942}
   - component: {fileID: 4864310122719725947}
-  - component: {fileID: -1168514491681215496}
   - component: {fileID: -3788267819428522011}
   - component: {fileID: 3089527472749358886}
   - component: {fileID: 7676671421097874602}
@@ -1292,11 +1291,11 @@ CapsuleCollider:
   m_GameObject: {fileID: 5710821172305045636}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
-  m_Radius: 0.28063655
+  m_Enabled: 0
+  m_Radius: 0.34223378
   m_Height: 1.7805958
   m_Direction: 1
-  m_Center: {x: 0.01448369, y: 0.8873224, z: 0}
+  m_Center: {x: -0.047113538, y: 0.8873224, z: 0}
 --- !u!195 &4864310122719725942
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1331,19 +1330,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26b3f69ddcffb864593e2b9abbc0a0bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &-1168514491681215496
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5710821172305045636}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31200671dffe737429de97a2fcba11d1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  patrolID: 0
 --- !u!114 &-3788267819428522011
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2291,6 +2277,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5905990921456246329}
+  - component: {fileID: 3952860131726512568}
   m_Layer: 0
   m_Name: mixamorig:LeftHandIndex1
   m_TagString: Untagged
@@ -2314,6 +2301,19 @@ Transform:
   m_Father: {fileID: 1854889993217638422}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &3952860131726512568
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8980232010236381704}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.20914288, y: 0.75889677, z: 0.14757003}
+  m_Center: {x: -0.046962153, y: -0.2756245, z: 0.01400708}
 --- !u!1 &9070462393908337689
 GameObject:
   m_ObjectHideFlags: 0
@@ -2325,7 +2325,7 @@ GameObject:
   - component: {fileID: 1854889993217638422}
   m_Layer: 0
   m_Name: mixamorig:LeftHand
-  m_TagString: Untagged
+  m_TagString: EnemyHand
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

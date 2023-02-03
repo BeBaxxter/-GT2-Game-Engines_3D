@@ -5,28 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="93a784ba-db78-4f8b-8341-e519b0ba32d5" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.-GT2-Game-Engines_3D/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.-GT2-Game-Engines_3D/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Billy Work/Assets/Animations/slash1.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Billy Work/Assets/Animations/slash1.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Billy Work/Assets/Animations/slash2.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Billy Work/Assets/Animations/slash2.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Billy Work/Assets/Animations/slash3.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Billy Work/Assets/Animations/slash3.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Jana/Scripts/attackTwoState.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Jana/Scripts/attackTwoState.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Jana/Scripts/patrolState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Jana/Scripts/patrolState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Jana/Scripts/runState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Jana/Scripts/runState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Jana/enemy/EnemyAnimationController.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Jana/enemy/EnemyAnimationController.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefab/Monster.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/Monster.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/HealthBar.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/HealthBar.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Jana.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Jana.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/LevelDesign.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/LevelDesign.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EnemyHealth.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EnemyHealth.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Menu/ScreenHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Menu/ScreenHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/86acb61e0d2b4b36bc20af11093be9a5157e00/58/e241f709/Cursor.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -45,6 +32,7 @@
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="rider.run.widget.enabled.cache" value="false" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -80,7 +68,8 @@
       <updated>1672584372062</updated>
       <workItem from="1672584379467" duration="9391000" />
       <workItem from="1673724442765" duration="30334000" />
-      <workItem from="1675355632534" duration="16682000" />
+      <workItem from="1675355632534" duration="27321000" />
+      <workItem from="1675430551788" duration="4852000" />
     </task>
     <servers />
   </component>
