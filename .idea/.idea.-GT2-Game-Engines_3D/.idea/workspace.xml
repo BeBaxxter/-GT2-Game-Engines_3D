@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="93a784ba-db78-4f8b-8341-e519b0ba32d5" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.-GT2-Game-Engines_3D/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.-GT2-Game-Engines_3D/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/CallSpaceship.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/CallSpaceship.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
-    </list>
+    <list default="true" id="93a784ba-db78-4f8b-8341-e519b0ba32d5" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -79,7 +75,7 @@
       <workItem from="1672584379467" duration="9391000" />
       <workItem from="1673724442765" duration="30334000" />
       <workItem from="1675355632534" duration="27321000" />
-      <workItem from="1675430551788" duration="10422000" />
+      <workItem from="1675430551788" duration="11291000" />
     </task>
     <servers />
   </component>
