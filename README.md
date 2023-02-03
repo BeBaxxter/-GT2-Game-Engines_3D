@@ -2,7 +2,7 @@
 
 
 ## Description
-RMC is a character action game in which the player is in a warehouse in space.  The player's task is to defeat the monsters he encounters in the different rooms. When he defeats all the monsters, he can escape from the warehouse with a spaceship.
+Robot May Cry is a character action game in which the player is in a warehouse in space.  The player's task is to defeat the monsters he encounters in the different rooms. When he defeats all the monsters, he can escape from the warehouse with a spaceship.
 
 ### Genre
 3D Character Action Game 
