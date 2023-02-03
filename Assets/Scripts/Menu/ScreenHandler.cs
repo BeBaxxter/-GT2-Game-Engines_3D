@@ -44,15 +44,15 @@ public class ScreenHandler : StateHandler
     private void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        OnEnter(MenuTransitions.MainMenuSelected);
-    }
-
-    public void PlayerDeath() {
-        player = GameObject.FindGameObjectWithTag("Player");
         deathScreen = GameObject.FindGameObjectWithTag("DeathScreen");
         OnEnter(MenuTransitions.MainMenuSelected);
         OnExit(MenuTransitions.PlayerDead);
         OnExit(MenuTransitions.PlayerWin);
+    }
+
+    public void PlayerDeath() {
+        stateMachine.Trigger(MenuTransitions.PlayerDead);
+        OnEnter(MenuTransitions.PlayerDead);
     }
 
     public void PlayerWin()
