@@ -16,7 +16,9 @@ RMC is a character action game in which the player is in a warehouse in space.  
 ### Player 
 
 
--Player can move around the room with WASD and move the Camera withe the mouse. 
+-Player can move around the room with WASD and move the Camera withe the mouse or with the controller.
+
+-Player can initiate a 3-hit combo attack by clicking the left mouse button or the X button on the Xbox controller (Square for Dualshock controller)
 
 -Menu Items can be selected with the mouse click.
 
