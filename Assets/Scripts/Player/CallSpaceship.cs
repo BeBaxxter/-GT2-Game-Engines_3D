@@ -8,6 +8,7 @@ public class CallSpaceship : MonoBehaviour
   private GameObject player;
   private GameObject winnerSpaceShip;
   private Animation spaceshipAnimatation;
+  private EnemyCounter _enemyCounter;
 
   private void Start()
   {
@@ -15,14 +16,15 @@ public class CallSpaceship : MonoBehaviour
     winnerSpaceShip = GameObject.FindGameObjectWithTag("WinnerSpaceShip");
     spaceshipAnimatation = winnerSpaceShip.GetComponent<Animation>();
     spaceshipAnimatation.enabled = false;
+    _enemyCounter = GameObject.FindObjectOfType<EnemyCounter>();
   }
+  
 
   private void OnTriggerEnter(Collider other)
   {
-    if (other.gameObject == player)
+    if (other.gameObject == player && _enemyCounter.getEnemyCount() == 0)
     {
       spaceshipAnimatation.enabled = true;
-      
     }
   }
   
