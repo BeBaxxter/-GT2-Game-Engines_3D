@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0009141285, g: 0.0007064985, b: 0.00051043736, a: 1}
+  m_IndirectSpecularColor: {r: 0.0008996234, g: 0.00070369965, b: 0.0004974558, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -15835,6 +15835,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   handlerName: 
   canvasGroup: {fileID: 2105505898}
+  stateMachine: {fileID: 1736989847}
 --- !u!4 &1514937555
 Transform:
   m_ObjectHideFlags: 0
@@ -16072,6 +16073,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   handlerName: 
   canvasGroup: {fileID: 41266227}
+  stateMachine: {fileID: 1736989847}
 --- !u!4 &1607794803
 Transform:
   m_ObjectHideFlags: 0
@@ -18688,6 +18690,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   handlerName: 
   canvasGroup: {fileID: 716886999}
+  stateMachine: {fileID: 1736989847}
 --- !u!4 &2078633557
 Transform:
   m_ObjectHideFlags: 0

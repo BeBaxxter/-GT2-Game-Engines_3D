@@ -24,7 +24,6 @@ public class ScreenHandler : StateHandler
             Cursor.lockState = CursorLockMode.None;
             player.GetComponent<StarterAssetsInputs>().cursorInputForLook = false;
         }
-        
         else if (stateMachine.CurrentState == stateMachine.StartGameHandler)
         {
             Time.timeScale = 1;
@@ -32,7 +31,6 @@ public class ScreenHandler : StateHandler
             Cursor.lockState = CursorLockMode.Locked;
             player.GetComponent<StarterAssetsInputs>().cursorInputForLook = true;
         }
-        
     }
 
     public override void OnExit<T>(T transition)
@@ -40,13 +38,14 @@ public class ScreenHandler : StateHandler
         canvasGroup.alpha = 0;
         canvasGroup.interactable = false;
         canvasGroup.blocksRaycasts = false;
-        
-    }   
+
+    }
 
     private void Awake()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
         OnEnter(MenuTransitions.MainMenuSelected);
-    } 
+    }
 
     public void PlayerDeath() {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -54,7 +53,6 @@ public class ScreenHandler : StateHandler
         OnEnter(MenuTransitions.MainMenuSelected);
         OnExit(MenuTransitions.PlayerDead);
         OnExit(MenuTransitions.PlayerWin);
-        
     }
 
     public void PlayerWin()
