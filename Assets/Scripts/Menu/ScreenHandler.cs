@@ -8,19 +8,14 @@ public class ScreenHandler : StateHandler
     private GameObject deathScreen;
     
     public override string Name => handlerName;
-<<<<<<< Updated upstream
-=======
     private GameObject player;
     public MenuStateMachine stateMachine;
->>>>>>> Stashed changes
-
+    
     public override void OnEnter<T>(T transition)
     {
         canvasGroup.alpha = 1;
         canvasGroup.interactable = true;
         canvasGroup.blocksRaycasts = true;
-<<<<<<< Updated upstream
-=======
 
         if (stateMachine.CurrentState == stateMachine.PlayerDeadHandler || stateMachine.CurrentState == stateMachine.PlayerWinHandler || stateMachine.CurrentState == stateMachine.MainMenuHandler)
         {
@@ -37,8 +32,7 @@ public class ScreenHandler : StateHandler
             Cursor.lockState = CursorLockMode.Locked;
             player.GetComponent<StarterAssetsInputs>().cursorInputForLook = true;
         }
-
->>>>>>> Stashed changes
+        
     }
 
     public override void OnExit<T>(T transition)
@@ -51,12 +45,10 @@ public class ScreenHandler : StateHandler
 
     private void Awake()
     {
-<<<<<<< Updated upstream
         OnEnter(MenuTransitions.MainMenuSelected);
     } 
 
     public void PlayerDeath() {
-=======
         player = GameObject.FindGameObjectWithTag("Player");
         deathScreen = GameObject.FindGameObjectWithTag("DeathScreen");
         OnEnter(MenuTransitions.MainMenuSelected);
@@ -65,13 +57,13 @@ public class ScreenHandler : StateHandler
         
     }
 
-    public void PlayerDeath()
+    /*public void PlayerDeath()
     {
         stateMachine.Trigger(MenuTransitions.PlayerDead);
 >>>>>>> Stashed changes
         OnEnter(MenuTransitions.PlayerDead);
         
-    }
+    }*/
 
     public void PlayerWin()
     {
