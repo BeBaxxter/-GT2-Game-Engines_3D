@@ -8,7 +8,9 @@ TagManager:
   - CinemachineTarget
   - Weapon
   - WayPoints
-  - WayPoints2
+  - EnemyHand
+  - WinnerSpaceShip
+  - DeathScreen
   layers:
   - Default
   - TransparentFX
