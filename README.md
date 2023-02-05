@@ -29,6 +29,7 @@ Robot May Cry is a character action game in which the player is in a warehouse i
 * the player can see his life score on the health bar, which decreases when the monster attacks the player
 
 ![health_bar](https://user-images.githubusercontent.com/97367920/216702468-4be26219-f7cc-4ad9-8688-c5827e342c5f.gif)  
+some part of the script from https://www.youtube.com/watch?v=BLfNP4Sc_iA
 
 
 
